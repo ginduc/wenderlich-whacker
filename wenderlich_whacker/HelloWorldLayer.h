@@ -16,6 +16,9 @@
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
     NSMutableArray *moles;
+    
+    CCAnimation *laughAnim;
+    CCAnimation *hitAnim;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

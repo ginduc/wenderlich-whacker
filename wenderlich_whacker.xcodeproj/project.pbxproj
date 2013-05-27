@@ -145,6 +145,8 @@
 		F7B1A59D1753603400919B23 /* sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5911753603400919B23 /* sprites-hd.pvr.ccz */; };
 		F7B1A59E1753603400919B23 /* sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5921753603400919B23 /* sprites.plist */; };
 		F7B1A59F1753603400919B23 /* sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5931753603400919B23 /* sprites.pvr.ccz */; };
+		F7B1A5A11753653100919B23 /* laughAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A01753653100919B23 /* laughAnim.plist */; };
+		F7B1A5A31753662000919B23 /* hitAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A21753662000919B23 /* hitAnim.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,6 +434,8 @@
 		F7B1A5911753603400919B23 /* sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = "sprites-hd.pvr.ccz"; path = "resources/resources/sprites-hd.pvr.ccz"; sourceTree = SOURCE_ROOT; };
 		F7B1A5921753603400919B23 /* sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = sprites.plist; path = resources/resources/sprites.plist; sourceTree = SOURCE_ROOT; };
 		F7B1A5931753603400919B23 /* sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = sprites.pvr.ccz; path = resources/resources/sprites.pvr.ccz; sourceTree = SOURCE_ROOT; };
+		F7B1A5A01753653100919B23 /* laughAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = laughAnim.plist; sourceTree = "<group>"; };
+		F7B1A5A21753662000919B23 /* hitAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hitAnim.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +535,8 @@
 				F74B24FE175313E40069A449 /* Icon@2x.png */,
 				F74B2500175313E40069A449 /* Info.plist */,
 				F74B2501175313E40069A449 /* iTunesArtwork */,
+				F7B1A5A01753653100919B23 /* laughAnim.plist */,
+				F7B1A5A21753662000919B23 /* hitAnim.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -972,6 +978,8 @@
 				F7B1A59D1753603400919B23 /* sprites-hd.pvr.ccz in Resources */,
 				F7B1A59E1753603400919B23 /* sprites.plist in Resources */,
 				F7B1A59F1753603400919B23 /* sprites.pvr.ccz in Resources */,
+				F7B1A5A11753653100919B23 /* laughAnim.plist in Resources */,
+				F7B1A5A31753662000919B23 /* hitAnim.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

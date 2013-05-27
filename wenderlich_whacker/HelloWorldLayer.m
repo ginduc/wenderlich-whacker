@@ -113,6 +113,11 @@
         [moles addObject:mole3];
 		
 		[self schedule:@selector(tryPopMoles:) interval:0.5];
+        
+        laughAnim = [self animationFromPlist:@"laughAnim" delay:0.1];
+        hitAnim = [self animationFromPlist:@"hitAnim" delay:0.02];
+        [[CCAnimationCache sharedAnimationCache] addAnimation:laughAnim name:@"laughAnim"];
+        [[CCAnimationCache sharedAnimationCache] addAnimation:hitAnim name:@"hitAnim"];
 
 		//
 		// Leaderboards and Achievements
@@ -173,7 +178,8 @@
         }
     }
 }
-
+/*
+ // Part 1 version
 - (void) popMole:(CCSprite *)mole {
     CCMoveBy *moveUp = [CCMoveBy actionWithDuration:0.2 position:ccp(0, mole.contentSize.height)]; // 1
     CCEaseInOut *easeMoveUp = [CCEaseInOut actionWithAction:moveUp rate:3.0]; // 2
@@ -182,6 +188,15 @@
     
     [mole runAction:[CCSequence actions:easeMoveUp, delay, easeMoveDown, nil]]; // 5
 }
+*/
+- (void) popMole:(CCSprite *)mole {
+    CCMoveBy *moveUp = [CCMoveBy actionWithDuration:0.2 position:ccp(0, mole.contentSize.height)];
+    CCEaseInOut *easeMoveUp = [CCEaseInOut actionWithAction:moveUp rate:3.0];
+    CCAction *easeMoveDown = [easeMoveUp reverse];
+    CCAnimate *laugh = [CCAnimate actionWithAnimation:laughAnim restoreOriginalFrame:YES];
+    
+    [mole runAction:[CCSequence actions:easeMoveUp, laugh, easeMoveDown, nil]];
+}
 
 - (CGPoint)convertPoint:(CGPoint)point {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -189,6 +204,18 @@
     } else {
         return point;
     }
+}
+
+- (CCAnimation *)animationFromPlist:(NSString *)animPlist delay:(float)delay {
+    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:animPlist ofType:@"plist"]; // 1
+    NSArray *animImages = [NSArray arrayWithContentsOfFile:plistPath]; // 2
+    NSMutableArray *animFrames = [NSMutableArray array]; // 3
+    for(NSString *animImage in animImages) { // 4
+        [animFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:animImage]]; // 5
+    }
+    return [CCAnimation animationWithFrames:animFrames delay:delay]; // 6
+    
 }
 
 // on "dealloc" you need to release all your retained objects
