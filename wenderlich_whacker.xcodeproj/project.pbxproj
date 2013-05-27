@@ -147,6 +147,9 @@
 		F7B1A59F1753603400919B23 /* sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5931753603400919B23 /* sprites.pvr.ccz */; };
 		F7B1A5A11753653100919B23 /* laughAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A01753653100919B23 /* laughAnim.plist */; };
 		F7B1A5A31753662000919B23 /* hitAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A21753662000919B23 /* hitAnim.plist */; };
+		F7B1A5A7175369E000919B23 /* laugh.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A4175369DF00919B23 /* laugh.caf */; };
+		F7B1A5A8175369E000919B23 /* ow.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A5175369E000919B23 /* ow.caf */; };
+		F7B1A5A9175369E000919B23 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = F7B1A5A6175369E000919B23 /* whack.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,6 +439,9 @@
 		F7B1A5931753603400919B23 /* sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; name = sprites.pvr.ccz; path = resources/resources/sprites.pvr.ccz; sourceTree = SOURCE_ROOT; };
 		F7B1A5A01753653100919B23 /* laughAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = laughAnim.plist; sourceTree = "<group>"; };
 		F7B1A5A21753662000919B23 /* hitAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hitAnim.plist; sourceTree = "<group>"; };
+		F7B1A5A4175369DF00919B23 /* laugh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = laugh.caf; path = Resources/laugh.caf; sourceTree = "<group>"; };
+		F7B1A5A5175369E000919B23 /* ow.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ow.caf; path = Resources/ow.caf; sourceTree = "<group>"; };
+		F7B1A5A6175369E000919B23 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = whack.caf; path = Resources/whack.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +516,9 @@
 		F74B24E9175313E40069A449 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7B1A5A4175369DF00919B23 /* laugh.caf */,
+				F7B1A5A5175369E000919B23 /* ow.caf */,
+				F7B1A5A6175369E000919B23 /* whack.caf */,
 				F7B1A5881753603400919B23 /* background-hd.plist */,
 				F7B1A5891753603400919B23 /* background-hd.pvr.ccz */,
 				F7B1A58A1753603400919B23 /* background.plist */,
@@ -980,6 +989,9 @@
 				F7B1A59F1753603400919B23 /* sprites.pvr.ccz in Resources */,
 				F7B1A5A11753653100919B23 /* laughAnim.plist in Resources */,
 				F7B1A5A31753662000919B23 /* hitAnim.plist in Resources */,
+				F7B1A5A7175369E000919B23 /* laugh.caf in Resources */,
+				F7B1A5A8175369E000919B23 /* ow.caf in Resources */,
+				F7B1A5A9175369E000919B23 /* whack.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

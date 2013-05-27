@@ -6,12 +6,15 @@
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
+#import "SimpleAudioEngine.h"
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
+
+#define TOTAL_SPAWNS 10
 
 #pragma mark - HelloWorldLayer
 
@@ -126,6 +129,10 @@
         label.anchorPoint = ccp(1, 0);
         label.position = ccp(winSize.width - margin, margin);
         [self addChild:label z:10];
+        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"laugh.caf"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"ow.caf"];
+        //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"whack.caf" loop:YES];
 
 		//
 		// Leaderboards and Achievements
@@ -182,7 +189,7 @@
     
     [label setString:[NSString stringWithFormat:@"Score: %d", score]];
     
-    if (totalSpawns >= 50) {
+    if (totalSpawns >= TOTAL_SPAWNS) {
         
         CGSize winSize = [CCDirector sharedDirector].winSize;
         
@@ -217,7 +224,7 @@
 }
 */
 - (void) popMole:(CCSprite *)mole {
-    if (totalSpawns > 50) return;
+    if (totalSpawns > TOTAL_SPAWNS) return;
     totalSpawns++;
     
     [mole setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"mole_1.png"]];
@@ -263,6 +270,7 @@
 - (void)setTappable:(id)sender {
     CCSprite *mole = (CCSprite *)sender;
     [mole setUserData:TRUE];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"laugh.caf"];
 }
 
 - (void)unsetTappable:(id)sender {
@@ -281,7 +289,7 @@
     for (CCSprite *mole in moles) {
         if (mole.userData == FALSE) continue;
         if (CGRectContainsPoint(mole.boundingBox, touchLocation)) {
-            
+            [[SimpleAudioEngine sharedEngine] playEffect:@"ow.caf"];
             mole.userData = FALSE;
             score+= 10;
             
