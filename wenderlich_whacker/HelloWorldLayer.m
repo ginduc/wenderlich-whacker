@@ -14,7 +14,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
-#define TOTAL_SPAWNS 10
+#define TOTAL_SPAWNS 20
 
 #pragma mark - HelloWorldLayer
 
