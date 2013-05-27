@@ -7,15 +7,15 @@
             <key>bg_dirt.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{512,384}}</string>
+                <string>{{2,2},{256,192}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{512,384}}</string>
+                <string>{{0,0},{256,192}}</string>
                 <key>sourceSize</key>
-                <string>{512,384}</string>
+                <string>{256,192}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -23,13 +23,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>background-hd.pvr.ccz</string>
+            <string>background.pvr.ccz</string>
             <key>size</key>
-            <string>{512,1024}</string>
+            <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d98a90524a4174c5a130cf1ba0692e92$</string>
+            <string>$TexturePacker:SmartUpdate:8a266987a9f0b17e2f47a5160e1b77d2$</string>
             <key>textureFileName</key>
-            <string>background-hd.pvr.ccz</string>
+            <string>background.pvr.ccz</string>
         </dict>
     </dict>
 </plist>

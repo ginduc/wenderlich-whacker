@@ -40,25 +40,84 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
-		
+		/*
 		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
+		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64]; 
+        CGSize size = [[CCDirector sharedDirector] winSize]; // ask director for the window size
+        label.position =  ccp( size.width /2 , size.height/2 ); // position the label on the center of the screen
+        [self addChild: label]; // add the label as a child to this Layer
+        */
+        
+        CGSize size = [[CCDirector sharedDirector] winSize]; // ask director for the window size
+        
+        // Determine names of sprite sheets and plists to load
+        NSString *bgSheet = @"background.pvr.ccz";
+        NSString *bgPlist = @"background.plist";
+        NSString *fgSheet = @"foreground.pvr.ccz";
+        NSString *fgPlist = @"foreground.plist";
+        NSString *sSheet = @"sprites.pvr.ccz";
+        NSString *sPlist = @"sprites.plist";
 
-		// ask director for the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            bgSheet = @"background-hd.pvr.ccz";
+            bgPlist = @"background-hd.plist";
+            fgSheet = @"foreground-hd.pvr.ccz";
+            fgPlist = @"foreground-hd.plist";
+            sSheet = @"sprites-hd.pvr.ccz";
+            sPlist = @"sprites-hd.plist";
+        }
+        
+        // Load background and foreground
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:bgPlist];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:fgPlist];
+        
+        // Add background
+        CGSize winSize = [CCDirector sharedDirector].winSize;
+        CCSprite *dirt = [CCSprite spriteWithSpriteFrameName:@"bg_dirt.png"];
+        dirt.scale = 2.0;
+        dirt.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:dirt z:-2];
+        
+        // Add foreground
+        CCSprite *lower = [CCSprite spriteWithSpriteFrameName:@"grass_lower.png"];
+        lower.anchorPoint = ccp(0.5, 1);
+        lower.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:lower z:1];
+        
+        CCSprite *upper = [CCSprite spriteWithSpriteFrameName:@"grass_upper.png"];
+        upper.anchorPoint = ccp(0.5, 0);
+        upper.position = ccp(winSize.width/2, winSize.height/2);
+        [self addChild:upper z:-1];
 		
-		// add the label as a child to this Layer
-		[self addChild: label];
+        // Load sprites
+        CCSpriteBatchNode *spriteNode = [CCSpriteBatchNode batchNodeWithFile:sSheet];
+        //[self addChild:spriteNode z:999]; // show moles on top of lower grass
+        [self addChild:spriteNode z:0]; // hide moles below lower grass
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:sPlist];
+        
+        moles = [[NSMutableArray alloc] init];
+        
+        CCSprite *mole1 = [CCSprite spriteWithSpriteFrameName:@"mole_1.png"];
+        mole1.position = [self convertPoint:ccp(85, 85)];
+        [spriteNode addChild:mole1];
+        [moles addObject:mole1];
+        
+        CCSprite *mole2 = [CCSprite spriteWithSpriteFrameName:@"mole_1.png"];
+        mole2.position = [self convertPoint:ccp(240, 85)];
+        [spriteNode addChild:mole2];
+        [moles addObject:mole2];
+        
+        CCSprite *mole3 = [CCSprite spriteWithSpriteFrameName:@"mole_1.png"];
+        mole3.position = [self convertPoint:ccp(395, 85)];
+        [spriteNode addChild:mole3];
+        [moles addObject:mole3];
 		
-		
-		
+		[self schedule:@selector(tryPopMoles:) interval:0.5];
+
 		//
 		// Leaderboards and Achievements
 		//
-		
+		/*
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:28];
 		
@@ -99,9 +158,37 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
+        */
 
 	}
 	return self;
+}
+
+- (void)tryPopMoles:(ccTime)dt {
+    for (CCSprite *mole in moles) {
+        if (arc4random() % 3 == 0) {
+            if (mole.numberOfRunningActions == 0) {
+                [self popMole:mole];
+            }
+        }
+    }
+}
+
+- (void) popMole:(CCSprite *)mole {
+    CCMoveBy *moveUp = [CCMoveBy actionWithDuration:0.2 position:ccp(0, mole.contentSize.height)]; // 1
+    CCEaseInOut *easeMoveUp = [CCEaseInOut actionWithAction:moveUp rate:3.0]; // 2
+    CCAction *easeMoveDown = [easeMoveUp reverse]; // 3
+    CCDelayTime *delay = [CCDelayTime actionWithDuration:0.5]; // 4
+    
+    [mole runAction:[CCSequence actions:easeMoveUp, delay, easeMoveDown, nil]]; // 5
+}
+
+- (CGPoint)convertPoint:(CGPoint)point {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return ccp(32 + point.x*2, 64 + point.y*2);
+    } else {
+        return point;
+    }
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -113,6 +200,9 @@
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
+    
+    [moles release];
+    moles = nil;
 }
 
 #pragma mark GameKit delegate
