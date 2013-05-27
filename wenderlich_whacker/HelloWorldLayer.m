@@ -119,6 +119,14 @@
         [[CCAnimationCache sharedAnimationCache] addAnimation:laughAnim name:@"laughAnim"];
         [[CCAnimationCache sharedAnimationCache] addAnimation:hitAnim name:@"hitAnim"];
 
+        self.isTouchEnabled = YES;
+        
+        float margin = 10;
+        label = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Verdana" fontSize:[self convertFontSize:14.0]];
+        label.anchorPoint = ccp(1, 0);
+        label.position = ccp(winSize.width - margin, margin);
+        [self addChild:label z:10];
+
 		//
 		// Leaderboards and Achievements
 		//
@@ -170,6 +178,25 @@
 }
 
 - (void)tryPopMoles:(ccTime)dt {
+    if (gameOver) return;
+    
+    [label setString:[NSString stringWithFormat:@"Score: %d", score]];
+    
+    if (totalSpawns >= 50) {
+        
+        CGSize winSize = [CCDirector sharedDirector].winSize;
+        
+        CCLabelTTF *goLabel = [CCLabelTTF labelWithString:@"Level Complete!" fontName:@"Verdana" fontSize:[self convertFontSize:48.0]];
+        goLabel.position = ccp(winSize.width/2, winSize.height/2);
+        goLabel.scale = 0.1;
+        [self addChild:goLabel z:10];
+        [goLabel runAction:[CCScaleTo actionWithDuration:0.5 scale:1.0]];
+        
+        gameOver = true;
+        return;
+        
+    }
+
     for (CCSprite *mole in moles) {
         if (arc4random() % 3 == 0) {
             if (mole.numberOfRunningActions == 0) {
@@ -190,12 +217,19 @@
 }
 */
 - (void) popMole:(CCSprite *)mole {
+    if (totalSpawns > 50) return;
+    totalSpawns++;
+    
+    [mole setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"mole_1.png"]];
+    
     CCMoveBy *moveUp = [CCMoveBy actionWithDuration:0.2 position:ccp(0, mole.contentSize.height)];
+    CCCallFunc *setTappable = [CCCallFuncN actionWithTarget:self selector:@selector(setTappable:)];
     CCEaseInOut *easeMoveUp = [CCEaseInOut actionWithAction:moveUp rate:3.0];
     CCAction *easeMoveDown = [easeMoveUp reverse];
+    CCCallFunc *unsetTappable = [CCCallFuncN actionWithTarget:self selector:@selector(unsetTappable:)];    
     CCAnimate *laugh = [CCAnimate actionWithAnimation:laughAnim restoreOriginalFrame:YES];
     
-    [mole runAction:[CCSequence actions:easeMoveUp, laugh, easeMoveDown, nil]];
+    [mole runAction:[CCSequence actions:easeMoveUp, setTappable, laugh, unsetTappable, easeMoveDown, nil]];
 }
 
 - (CGPoint)convertPoint:(CGPoint)point {
@@ -216,6 +250,49 @@
     }
     return [CCAnimation animationWithFrames:animFrames delay:delay]; // 6
     
+}
+
+- (float)convertFontSize:(float)fontSize {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        return fontSize * 2;
+    } else {
+        return fontSize;
+    }
+}
+
+- (void)setTappable:(id)sender {
+    CCSprite *mole = (CCSprite *)sender;
+    [mole setUserData:TRUE];
+}
+
+- (void)unsetTappable:(id)sender {
+    CCSprite *mole = (CCSprite *)sender;
+    [mole setUserData:FALSE];
+}
+
+-(void) registerWithTouchDispatcher
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:kCCMenuTouchPriority swallowsTouches:NO];
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
+    for (CCSprite *mole in moles) {
+        if (mole.userData == FALSE) continue;
+        if (CGRectContainsPoint(mole.boundingBox, touchLocation)) {
+            
+            mole.userData = FALSE;
+            score+= 10;
+            
+            [mole stopAllActions];
+            CCAnimate *hit = [CCAnimate actionWithAnimation:hitAnim restoreOriginalFrame:NO];
+            CCMoveBy *moveDown = [CCMoveBy actionWithDuration:0.2 position:ccp(0, -mole.contentSize.height)];
+            CCEaseInOut *easeMoveDown = [CCEaseInOut actionWithAction:moveDown rate:3.0];
+            [mole runAction:[CCSequence actions:hit, easeMoveDown, nil]];
+        }
+    }
+    return TRUE;
 }
 
 // on "dealloc" you need to release all your retained objects

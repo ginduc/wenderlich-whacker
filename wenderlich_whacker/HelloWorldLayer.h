@@ -19,6 +19,11 @@
     
     CCAnimation *laughAnim;
     CCAnimation *hitAnim;
+    
+    CCLabelTTF *label;
+    int score;
+    int totalSpawns;
+    BOOL gameOver;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
