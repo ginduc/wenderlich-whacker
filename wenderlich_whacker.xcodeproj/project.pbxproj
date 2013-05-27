@@ -133,7 +133,28 @@
 		F74B2662175313E50069A449 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F74B2661175313E50069A449 /* AppDelegate.m */; };
 		F74B2665175313E50069A449 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F74B2664175313E50069A449 /* HelloWorldLayer.m */; };
 		F74B2668175313E50069A449 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F74B2667175313E50069A449 /* IntroLayer.m */; };
+		F74B2698175354F40069A449 /* bg_dirt.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B268B175354F40069A449 /* bg_dirt.png */; };
+		F74B2699175354F40069A449 /* grass_lower.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B268D175354F40069A449 /* grass_lower.png */; };
+		F74B269A175354F40069A449 /* grass_upper.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B268E175354F40069A449 /* grass_upper.png */; };
+		F74B269B175354F40069A449 /* mole_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2690175354F40069A449 /* mole_1.png */; };
+		F74B269C175354F40069A449 /* mole_laugh1.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2691175354F40069A449 /* mole_laugh1.png */; };
+		F74B269D175354F40069A449 /* mole_laugh2.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2692175354F40069A449 /* mole_laugh2.png */; };
+		F74B269E175354F40069A449 /* mole_laugh3.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2693175354F40069A449 /* mole_laugh3.png */; };
+		F74B269F175354F40069A449 /* mole_thump1.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2694175354F40069A449 /* mole_thump1.png */; };
+		F74B26A0175354F40069A449 /* mole_thump2.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2695175354F40069A449 /* mole_thump2.png */; };
+		F74B26A1175354F40069A449 /* mole_thump3.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2696175354F40069A449 /* mole_thump3.png */; };
+		F74B26A2175354F40069A449 /* mole_thump4.png in Resources */ = {isa = PBXBuildFile; fileRef = F74B2697175354F40069A449 /* mole_thump4.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F74B26A7175357030069A449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F74B24CB175313E40069A449 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F74B26A3175356400069A449;
+			remoteInfo = TexturePacker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F74B24D3175313E40069A449 /* wenderlich_whacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wenderlich_whacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -398,6 +419,17 @@
 		F74B2664175313E50069A449 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		F74B2666175313E50069A449 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		F74B2667175313E50069A449 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		F74B268B175354F40069A449 /* bg_dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_dirt.png; sourceTree = "<group>"; };
+		F74B268D175354F40069A449 /* grass_lower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_lower.png; sourceTree = "<group>"; };
+		F74B268E175354F40069A449 /* grass_upper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass_upper.png; sourceTree = "<group>"; };
+		F74B2690175354F40069A449 /* mole_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_1.png; sourceTree = "<group>"; };
+		F74B2691175354F40069A449 /* mole_laugh1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_laugh1.png; sourceTree = "<group>"; };
+		F74B2692175354F40069A449 /* mole_laugh2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_laugh2.png; sourceTree = "<group>"; };
+		F74B2693175354F40069A449 /* mole_laugh3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_laugh3.png; sourceTree = "<group>"; };
+		F74B2694175354F40069A449 /* mole_thump1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_thump1.png; sourceTree = "<group>"; };
+		F74B2695175354F40069A449 /* mole_thump2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_thump2.png; sourceTree = "<group>"; };
+		F74B2696175354F40069A449 /* mole_thump3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_thump3.png; sourceTree = "<group>"; };
+		F74B2697175354F40069A449 /* mole_thump4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mole_thump4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +488,7 @@
 		F74B24E8175313E40069A449 /* wenderlich_whacker */ = {
 			isa = PBXGroup;
 			children = (
+				F74B2689175354F40069A449 /* Art */,
 				F74B2660175313E50069A449 /* AppDelegate.h */,
 				F74B2661175313E50069A449 /* AppDelegate.m */,
 				F74B2663175313E50069A449 /* HelloWorldLayer.h */,
@@ -832,7 +865,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F74B2689175354F40069A449 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				F74B268A175354F40069A449 /* background */,
+				F74B268C175354F40069A449 /* foreground */,
+				F74B268F175354F40069A449 /* sprites */,
+			);
+			path = Art;
+			sourceTree = "<group>";
+		};
+		F74B268A175354F40069A449 /* background */ = {
+			isa = PBXGroup;
+			children = (
+				F74B268B175354F40069A449 /* bg_dirt.png */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
+		F74B268C175354F40069A449 /* foreground */ = {
+			isa = PBXGroup;
+			children = (
+				F74B268D175354F40069A449 /* grass_lower.png */,
+				F74B268E175354F40069A449 /* grass_upper.png */,
+			);
+			path = foreground;
+			sourceTree = "<group>";
+		};
+		F74B268F175354F40069A449 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				F74B2690175354F40069A449 /* mole_1.png */,
+				F74B2691175354F40069A449 /* mole_laugh1.png */,
+				F74B2692175354F40069A449 /* mole_laugh2.png */,
+				F74B2693175354F40069A449 /* mole_laugh3.png */,
+				F74B2694175354F40069A449 /* mole_thump1.png */,
+				F74B2695175354F40069A449 /* mole_thump2.png */,
+				F74B2696175354F40069A449 /* mole_thump3.png */,
+				F74B2697175354F40069A449 /* mole_thump4.png */,
+			);
+			path = sprites;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		F74B26A3175356400069A449 /* TexturePacker */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(PROJECT_DIR)/resources/PackTextures.sh";
+			buildConfigurationList = F74B26A4175356400069A449 /* Build configuration list for PBXLegacyTarget "TexturePacker" */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/sh;
+			buildWorkingDirectory = "$(SRCROOT)";
+			dependencies = (
+			);
+			name = TexturePacker;
+			passBuildSettingsInEnvironment = 1;
+			productName = TexturePacker;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		F74B24D2175313E40069A449 /* wenderlich_whacker */ = {
@@ -846,6 +938,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F74B26A8175357030069A449 /* PBXTargetDependency */,
 			);
 			name = wenderlich_whacker;
 			productName = wenderlich_whacker;
@@ -873,6 +966,7 @@
 			projectRoot = "";
 			targets = (
 				F74B24D2175313E40069A449 /* wenderlich_whacker */,
+				F74B26A3175356400069A449 /* TexturePacker */,
 			);
 		};
 /* End PBXProject section */
@@ -895,6 +989,17 @@
 				F74B24FF175313E40069A449 /* Icon@2x.png in Resources */,
 				F74B2502175313E40069A449 /* iTunesArtwork in Resources */,
 				F74B2640175313E50069A449 /* ChangeLog in Resources */,
+				F74B2698175354F40069A449 /* bg_dirt.png in Resources */,
+				F74B2699175354F40069A449 /* grass_lower.png in Resources */,
+				F74B269A175354F40069A449 /* grass_upper.png in Resources */,
+				F74B269B175354F40069A449 /* mole_1.png in Resources */,
+				F74B269C175354F40069A449 /* mole_laugh1.png in Resources */,
+				F74B269D175354F40069A449 /* mole_laugh2.png in Resources */,
+				F74B269E175354F40069A449 /* mole_laugh3.png in Resources */,
+				F74B269F175354F40069A449 /* mole_thump1.png in Resources */,
+				F74B26A0175354F40069A449 /* mole_thump2.png in Resources */,
+				F74B26A1175354F40069A449 /* mole_thump3.png in Resources */,
+				F74B26A2175354F40069A449 /* mole_thump4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,6 +1119,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F74B26A8175357030069A449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F74B26A3175356400069A449 /* TexturePacker */;
+			targetProxy = F74B26A7175357030069A449 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		F74B2669175313E50069A449 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1093,6 +1206,64 @@
 			};
 			name = Release;
 		};
+		F74B26A5175356400069A449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F74B26A6175356400069A449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1112,6 +1283,16 @@
 				F74B266D175313E50069A449 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74B26A4175356400069A449 /* Build configuration list for PBXLegacyTarget "TexturePacker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74B26A5175356400069A449 /* Debug */,
+				F74B26A6175356400069A449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
